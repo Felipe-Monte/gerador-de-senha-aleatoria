@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+
+  background: #1B1D20;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 800px;
+  height: 500px;
+  padding: 15px;
+
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  color: #FFFFFF;
+}
+
+p {
+  text-align: center;
+  color: #FFFFFF;
+}
+
+div#container_password {
+  width: 100%;
+
+  margin-top: 15px;
+
+  padding: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+input#number {
+  width: 88px;
+  height: 58px;
+
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 10px;
+}
+
+div#password {
+  width: 500px;
+  height: 70px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+
+  border-radius: 8px;
+
+  border: 2px solid #20EE00;
+  color: #FFFFFF;
+
+  position: relative;
+}
+
+button#btn_generate{
+  position: absolute;
+  right: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: transparent;
+  border: none;
+
+  width: 50px;
+  height: 50px;
+
+  cursor: pointer;
+}
+
+button#btn_generate img {
+  width: 38px;
+  height: 38px;
+}
+
+div#container_inputs {
+  width: 100%;
+  margin-top: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.wrapper_input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+button#btn_copy {
+  width: 88px;
+  height: 58px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+  background-color: #903CF2;
+  color: #FFFFFF;
+  border-radius: 10px;
+  border: none;
+  transition: transform .3s cubic-bezier(0.2, 1, 0.2, 1.4);
+  cursor: pointer;
+}
+
+button#btn_copy:hover {
+  transform: scale(1.1); /* Ajuste o valor conforme necessário */
+}
+
+button#btn_copy:active {
+  transform: scale(0.95); /* Diminui o tamanho para simular o clique */
+  transition: transform .1s; /* Transição rápida para o efeito de clique */
+}
+
+.input_checkbox {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+label {
+  color: #FFFFFF;
+}

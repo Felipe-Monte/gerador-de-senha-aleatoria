@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Senhas</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <main>
+    <h1>Gerador de senhas aleatórias</h1>
+    <p>Gere senhas seguras, aleatórias e exclusivas com um só clique.</p>
+
+    <div id="container_password">
+      <input type="number" name="number" id="number" max="25" min="4">
+      <div id="password">
+        SENHA AQUI
+
+        <button id="btn_generate">
+          <img src="assets/refresh.svg" alt="botão gerador">
+        </button>
+      </div>
+      <button id="btn_copy">Copiar</button>
+    </div>
+
+    <div id="container_inputs">
+      <div class="wrapper_input">
+        <input type="checkbox" id="upper" class="input_checkbox">
+        <label for="upper">A - Z</label>
+      </div>
+
+      <div class="wrapper_input">
+        <input type="checkbox" id="lower" class="input_checkbox">
+        <label for="lower">a - z</label>
+      </div>
+
+      <div class="wrapper_input">
+        <input type="checkbox" id="numbers" class="input_checkbox">
+        <label for="numbers">0 - 9</label>
+      </div>
+
+      <div class="wrapper_input">
+        <input type="checkbox" id="special" class="input_checkbox">
+        <label for="special">Especial</label>
+      </div>
+    </div>
+  </main>
+  
+  <script src="index.js"></script>
+</body>
+</html>
