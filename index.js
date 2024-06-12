@@ -1,52 +1,65 @@
-const btnGeneratePassword = document.querySelector("#btn_generate")
-const inputLengthCharacters = document.querySelector("#number")
+const btnGeneratePassword = document.querySelector("#btn_generate");
+const inputLengthCharacters = document.querySelector("#number");
 
-const addLettersUpper = document.querySelector("#upper")
-const addLettersLower = document.querySelector("#lower")
-const addNumbers = document.querySelector("#numbers")
-const addSpecial = document.querySelector("#special")
+const addLettersUpper = document.querySelector("#upper");
+const addLettersLower = document.querySelector("#lower");
+const addNumbers = document.querySelector("#numbers");
+const addSpecial = document.querySelector("#special");
 
-let charTypes = []
+let charTypes = [];
 
-btnGeneratePassword.addEventListener("click", () => { 
-
-  if(inputLengthCharacters.value === ""){
-    return alert("Campo caracteres está vazio")
-  }else if(inputLengthCharacters.value < 4 || inputLengthCharacters.value > 25){
-    return alert("Apenas 4 a 25 caracteres")
+function getArrayCharacterSelected() {
+  if (!addLettersUpper.checked && !addLettersLower.checked && !addNumbers.checked && !addSpecial.checked) {
+    alert("Selecione pelo menos um campo de caracteres");
+    return 
   }
 
-  if(!addLettersUpper.checked && !addLettersLower.checked && !addNumbers.checked && !addSpecial.checked){
-    return alert("Selecione pelo menos um campo de caracteres")
+  if (addLettersUpper.checked) {
+    charTypes.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+  }
+  if (addLettersLower.checked) {
+    charTypes.push("abcdefghijklmnopqrstuvwxyz");
+  }
+  if (addNumbers.checked) {
+    charTypes.push("0123456789");
+  }
+  if (addSpecial.checked) {
+    charTypes.push("!@#$%^&*()-_=+[]{}|;:'`~");
   }
 
-  if(addLettersUpper.checked){
-    charTypes.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+  return charTypes;
+}
+
+function getLengthPassword(){
+  const size = inputLengthCharacters.value
+
+  if (size === "") {
+    alert("Campo caracteres está vazio");
+    return
+  } else if (size < 4 || size > 25) {
+    alert("Apenas 4 a 25 caracteres");
+    return
   }
-  if(addLettersLower.checked){
-    charTypes.push("abcdefghijklmnopqrstuvwxyz")
-  }
-  if(addNumbers.checked){
-    charTypes.push("0123456789")
-  }
-  if(addSpecial.checked){
-    charTypes.push("!@#$%^&*()-_=+[]{}|;:'`~")
-  }
-  return charTypes
 
+  return size
+}
 
-})
+function generateRandomCharacter(charTypes){
+  const randomIndex = Math.floor(Math.random() * charTypes.length) 
+  
+  return charTypes[randomIndex][Math.floor(Math.random() * charTypes[randomIndex].length)]
+}
 
+function createPassword(){
 
+}
 
-
-
-
-
-
-
-
-
+btnGeneratePassword.addEventListener("click", () => {
+  console.log(getLengthPassword()) 
+  // getArrayCharacterSelected()
+  // console.log(generateRandomCharacter(charTypes))
+  // charTypes = []
+});
 
 
 
@@ -65,4 +78,4 @@ btnGeneratePassword.addEventListener("click", () => {
 
 // copiar a senha com o botão "copiar"
 
-// adicionar efeitos 
+// adicionar efeitos de alerta (deixar mais bonito)
