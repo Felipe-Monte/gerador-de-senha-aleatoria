@@ -9,7 +9,7 @@ const addSpecial = document.querySelector("#special")
 let charTypes = []
 
 btnGeneratePassword.addEventListener("click", () => { 
-  
+
   if(inputLengthCharacters.value === ""){
     return alert("Campo caracteres está vazio")
   }else if(inputLengthCharacters.value < 4 || inputLengthCharacters.value > 25){
