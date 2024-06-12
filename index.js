@@ -1,39 +1,39 @@
-const btnGenerate = document.querySelector("#btn_generate")
-const inputCharacter = document.querySelector("#number")
+const btnGeneratePassword = document.querySelector("#btn_generate")
+const inputLengthCharacters = document.querySelector("#number")
 
-const checkboxUpper = document.querySelector("#upper")
-const checkboxLower = document.querySelector("#lower")
-const checkboxNumber = document.querySelector("#numbers")
-const checkboxSpecial = document.querySelector("#special")
+const addLettersUpper = document.querySelector("#upper")
+const addLettersLower = document.querySelector("#lower")
+const addNumbers = document.querySelector("#numbers")
+const addSpecial = document.querySelector("#special")
 
 let charTypes = []
 
-btnGenerate.addEventListener("click", () => { 
+btnGeneratePassword.addEventListener("click", () => { 
   
-  if(inputCharacter.value === ""){
+  if(inputLengthCharacters.value === ""){
     return alert("Campo caracteres está vazio")
-  }else if(inputCharacter.value < 4 || inputCharacter.value > 25){
+  }else if(inputLengthCharacters.value < 4 || inputLengthCharacters.value > 25){
     return alert("Apenas 4 a 25 caracteres")
   }
 
-  if(!checkboxUpper.checked && !checkboxLower.checked && !checkboxNumber.checked && !checkboxSpecial.checked){
+  if(!addLettersUpper.checked && !addLettersLower.checked && !addNumbers.checked && !addSpecial.checked){
     return alert("Selecione pelo menos um campo de caracteres")
   }
 
-  // pegar quando os checkbox estiverem marcados ou não 
-  if(checkboxUpper.checked){
+  if(addLettersUpper.checked){
     charTypes.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-    console.log(charTypes)
   }
-  // if(checkboxLower.checked){
-  //   charTypes.push("abcdefghijklmnopqrstuvwxyz")
-  // }
-  // if(checkboxNumber.checked){
-  //   charTypes.push("0123456789")
-  // }
-  // if(checkboxSpecial.checked){
-  //   charTypes.push("!@#$%^&*()-_=+[]{}|;:'`~")
-  // }
+  if(addLettersLower.checked){
+    charTypes.push("abcdefghijklmnopqrstuvwxyz")
+  }
+  if(addNumbers.checked){
+    charTypes.push("0123456789")
+  }
+  if(addSpecial.checked){
+    charTypes.push("!@#$%^&*()-_=+[]{}|;:'`~")
+  }
+  return charTypes
+
 
 })
 
