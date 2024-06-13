@@ -84,9 +84,6 @@ btnGeneratePassword.addEventListener("click", () => {
 });
 
 // desenvolver logica para gerar senha com base nos inputs marcados
-
 // mostrar na tela dentro do campo "senha aqui"
-
 // copiar a senha com o botão "copiar"
-
 // adicionar efeitos de alerta (deixar mais bonito)
