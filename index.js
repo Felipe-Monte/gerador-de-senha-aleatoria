@@ -50,15 +50,19 @@ function generateRandomCharacter(charTypes){
   return charTypes[randomIndex][Math.floor(Math.random() * charTypes[randomIndex].length)]
 }
 
-function createPassword(){
+function createPassword(size, charTypes){
+  let passwordGenerate = ""
 
+  while (passwordGenerate.length < size){
+    passwordGenerate += generateRandomCharacter(charTypes)
+  }
+
+  return passwordGenerate
 }
 
 btnGeneratePassword.addEventListener("click", () => {
-  console.log(getLengthPassword()) 
-  // getArrayCharacterSelected()
-  // console.log(generateRandomCharacter(charTypes))
-  // charTypes = []
+  console.log(createPassword(getLengthPassword(), getArrayCharacterSelected()))
+  charTypes = []
 });
 
 
