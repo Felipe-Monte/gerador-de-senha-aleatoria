@@ -6,7 +6,7 @@ const addLettersLower = document.querySelector("#lower");
 const addNumbers = document.querySelector("#numbers");
 const addSpecial = document.querySelector("#special");
 
-const passwordArea = document.querySelector("#password");
+const passwordArea = document.querySelector("#password_span");
 
 let charTypes = [];
 
@@ -75,7 +75,7 @@ function renderInScreen() {
     getArrayCharacterSelected()
   );
 
-  return console.log(password);
+  passwordArea.textContent = password
 }
 
 btnGeneratePassword.addEventListener("click", () => {
