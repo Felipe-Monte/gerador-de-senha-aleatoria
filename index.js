@@ -1,5 +1,6 @@
 const btnGeneratePassword = document.querySelector("#btn_generate");
 const inputLengthCharacters = document.querySelector("#number");
+const btnCopy = document.querySelector("#btn_copy")
 
 const addLettersUpper = document.querySelector("#upper");
 const addLettersLower = document.querySelector("#lower");
@@ -83,7 +84,9 @@ btnGeneratePassword.addEventListener("click", () => {
   charTypes = [];
 });
 
-// desenvolver logica para gerar senha com base nos inputs marcados
-// mostrar na tela dentro do campo "senha aqui"
+btnCopy.addEventListener("click", () => {
+  
+})
+
 // copiar a senha com o botão "copiar"
 // adicionar efeitos de alerta (deixar mais bonito)
