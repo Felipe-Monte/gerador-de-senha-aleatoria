@@ -6,12 +6,19 @@ const addLettersLower = document.querySelector("#lower");
 const addNumbers = document.querySelector("#numbers");
 const addSpecial = document.querySelector("#special");
 
+const passwordArea = document.querySelector("#password");
+
 let charTypes = [];
 
 function getArrayCharacterSelected() {
-  if (!addLettersUpper.checked && !addLettersLower.checked && !addNumbers.checked && !addSpecial.checked) {
+  if (
+    !addLettersUpper.checked &&
+    !addLettersLower.checked &&
+    !addNumbers.checked &&
+    !addSpecial.checked
+  ) {
     alert("Selecione pelo menos um campo de caracteres");
-    return 
+    return;
   }
 
   if (addLettersUpper.checked) {
@@ -30,51 +37,51 @@ function getArrayCharacterSelected() {
   return charTypes;
 }
 
-function getLengthPassword(){
-  const size = inputLengthCharacters.value
+function getLengthPassword() {
+  const size = inputLengthCharacters.value;
 
   if (size === "") {
     alert("Campo caracteres está vazio");
-    return
+    return;
   } else if (size < 4 || size > 25) {
     alert("Apenas 4 a 25 caracteres");
-    return
+    return;
   }
 
-  return size
+  return size;
 }
 
-function generateRandomCharacter(charTypes){
-  const randomIndex = Math.floor(Math.random() * charTypes.length) 
-  
-  return charTypes[randomIndex][Math.floor(Math.random() * charTypes[randomIndex].length)]
+function generateRandomCharacter(charTypes) {
+  const randomIndex = Math.floor(Math.random() * charTypes.length);
+
+  return charTypes[randomIndex][
+    Math.floor(Math.random() * charTypes[randomIndex].length)
+  ];
 }
 
-function createPassword(size, charTypes){
-  let passwordGenerate = ""
+function createPassword(size, charTypes) {
+  let passwordGenerate = "";
 
-  while (passwordGenerate.length < size){
-    passwordGenerate += generateRandomCharacter(charTypes)
+  while (passwordGenerate.length < size) {
+    passwordGenerate += generateRandomCharacter(charTypes);
   }
 
-  return passwordGenerate
+  return passwordGenerate;
+}
+
+function renderInScreen() {
+  let password = createPassword(
+    getLengthPassword(),
+    getArrayCharacterSelected()
+  );
+
+  return console.log(password);
 }
 
 btnGeneratePassword.addEventListener("click", () => {
-  console.log(createPassword(getLengthPassword(), getArrayCharacterSelected()))
-  charTypes = []
+  renderInScreen();
+  charTypes = [];
 });
-
-
-
-
-
-
-
-
-
-
-
 
 // desenvolver logica para gerar senha com base nos inputs marcados
 
