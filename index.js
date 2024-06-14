@@ -18,7 +18,9 @@ function getArrayCharacterSelected() {
     !addNumbers.checked &&
     !addSpecial.checked
   ) {
-    alert("Selecione pelo menos um campo de caracteres");
+    Toastify({
+      text: "Selecione pelo menos um campo de caracteres",
+    }).showToast();
     return;
   }
 
@@ -42,10 +44,14 @@ function getLengthPassword() {
   const size = inputLengthCharacters.value;
 
   if (size === "") {
-    alert("Campo caracteres está vazio");
+    Toastify({
+      text: "Campo caracteres está vazio",
+    }).showToast();
     return;
   } else if (size < 4 || size > 25) {
-    alert("Apenas 4 a 25 caracteres");
+    Toastify({
+      text: "Apenas 4 a 25 caracteres",
+    }).showToast();
     return;
   }
 
@@ -86,10 +92,15 @@ btnGeneratePassword.addEventListener("click", () => {
 
 btnCopy.addEventListener("click", () => {
   navigator.clipboard.writeText(passwordArea.textContent);
-  if (passwordArea.textContent === "") {
-    alert("Gere uma senha para poder copiar");
+  if (passwordArea.textContent === "SENHA AQUI") {
+    Toastify({
+      text: "Por favor gere uma senha",
+    }).showToast();
+  } else {
+    Toastify({
+      text: "Senha copiada com sucesso!",
+    }).showToast();
   }
-  alert(`Senha copiada ${passwordArea.textContent}`);
 });
 
 // adicionar efeitos de alerta (deixar mais bonito)
