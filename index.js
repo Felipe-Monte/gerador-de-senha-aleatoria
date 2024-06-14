@@ -81,7 +81,7 @@ function renderInScreen() {
     getLengthPassword(),
     getArrayCharacterSelected()
   );
-
+ 
   passwordArea.textContent = password;
 }
 
@@ -92,7 +92,7 @@ btnGeneratePassword.addEventListener("click", () => {
 
 btnCopy.addEventListener("click", () => {
   navigator.clipboard.writeText(passwordArea.textContent);
-  if (passwordArea.textContent === "SENHA AQUI") {
+  if (passwordArea.textContent === "SENHA AQUI" || passwordArea.textContent === "") {
     Toastify({
       text: "Por favor gere uma senha",
     }).showToast();
