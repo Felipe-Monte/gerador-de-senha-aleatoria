@@ -85,7 +85,11 @@ btnGeneratePassword.addEventListener("click", () => {
 });
 
 btnCopy.addEventListener("click", () => {
-  
+  navigator.clipboard.writeText(passwordArea.textContent)
+  if(passwordArea.textContent === ""){
+    alert("Gere uma senha para poder copiar")
+  }
+  alert(`Senha copiada ${passwordArea.textContent}`)
 })
 
 // copiar a senha com o botão "copiar"
