@@ -1,6 +1,6 @@
 const btnGeneratePassword = document.querySelector("#btn_generate");
 const inputLengthCharacters = document.querySelector("#number");
-const btnCopy = document.querySelector("#btn_copy")
+const btnCopy = document.querySelector("#btn_copy");
 
 const addLettersUpper = document.querySelector("#upper");
 const addLettersLower = document.querySelector("#lower");
@@ -76,7 +76,7 @@ function renderInScreen() {
     getArrayCharacterSelected()
   );
 
-  passwordArea.textContent = password
+  passwordArea.textContent = password;
 }
 
 btnGeneratePassword.addEventListener("click", () => {
@@ -85,12 +85,11 @@ btnGeneratePassword.addEventListener("click", () => {
 });
 
 btnCopy.addEventListener("click", () => {
-  navigator.clipboard.writeText(passwordArea.textContent)
-  if(passwordArea.textContent === ""){
-    alert("Gere uma senha para poder copiar")
+  navigator.clipboard.writeText(passwordArea.textContent);
+  if (passwordArea.textContent === "") {
+    alert("Gere uma senha para poder copiar");
   }
-  alert(`Senha copiada ${passwordArea.textContent}`)
-})
+  alert(`Senha copiada ${passwordArea.textContent}`);
+});
 
-// copiar a senha com o botão "copiar"
 // adicionar efeitos de alerta (deixar mais bonito)
